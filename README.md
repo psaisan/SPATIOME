@@ -2,7 +2,7 @@
 
 ## Overview
 
-Spatial transcriptomics has revolutionized our understanding of cellular communication and collective behavior within various biological tissues. By capturing complex cell-to-cell interactions and coordinated microscale transcriptional programs, this technology sheds light on emergent, macroscale tissue phenomena. However, interpreting the intricate data generated can be challenging without appropriate analytical tools.
+Spatial transcriptomics has revolutionized our understanding of cellular communication and collective behavior within various biological tissues. By capturing complex cell-to-cell interactions and coordinated microscale transcriptional programs, this technology sheds light on emergent, macroscale tissue phenomena. However, interpreting the intricate high dimensional data generated in this modality can be challenging without appropriate analytical tools.
 
 **SPATIOME** addresses this challenge by providing a synthetic data generation platform tailored for spatial transcriptomics. It serves as a computational resource for developing and evaluating analytical methods, transforming complex spatial transcriptomic data into quantifiable, biologically interpretable metrics and visualizations.
 
