@@ -32,28 +32,28 @@ Inspired by these interdisciplinary successes, SPATIOME was developed as a platf
 A simple generative process for spatial transcriptomic data involves:
 
 1. **Gene Selection:**  
-   Choose a predefined subset of \( G \) RNA molecules (or genes) from the total possible gene set \( G_{\text{total}} \) such that \( G \subseteq G_{\text{total}} \).
+   Choose a predefined subset of $\( G \)$ RNA molecules (or genes) from the total possible gene set \( G_{\text{total}} \) such that \( G \subseteq G_{\text{total}} \).
 
 2. **Data Acquisition:**  
    Advanced imaging, microscopy, and molecular barcoding techniques (e.g., MERFISH) capture and localize these molecules at spatial positions \((x_i, y_i, z_i)\) within a tissue section. The resulting set of transcript detections is represented as:
 
-   $$
+   $
    T = \{ (x_i, y_i, z_i, g_i) \mid i = 1, \dots, N_T \},
-   $$
+   $
 
    where:
-   - \((x_i, y_i, z_i)\) are the spatial coordinates,
-   - \(g_i\) is the gene identity,
-   - \(N_T\) is the total number of detections.
+   - $(x_i, y_i, z_i)$ are the spatial coordinates,
+   - $\(g_i\)$ is the gene identity,
+   - $\(N_T\)$ is the total number of detections.
 
 3. **Regularized Framework:**  
    For computational processing, the representation is shifted to a continuous field:
 
-   $$
+   $
    g: \mathbb{R}^2 \to \mathbb{R}^n,
-   $$
+   $
 
-   where each spatial coordinate \((x,y)\) corresponds to a high-dimensional gene expression vector. The \(z\)-component is dropped for simplicity.
+   where each spatial coordinate $\((x,y)\)$ corresponds to a high-dimensional gene expression vector. The $\(z\)$-component is dropped for simplicity.
 
 ---
 
@@ -65,46 +65,47 @@ SPATIOME generates synthetic spatial omics data through the following components
 
 #### 1. Spatial Domain
 
-A predefined mask image \( M(x,y) \) defines valid spatial locations:
+A predefined mask image $\( M(x,y) \)$ defines valid spatial locations:
 
-$$
+$
 S = \{ (x,y) \mid M(x,y) > \tau \},
-$$
+$
 
-where \(\tau\) is an intensity threshold. Cells are randomly sampled from \(S\) to obtain spatial coordinates \(\{ (x_i, y_i) \}_{i=1}^{N}\).
+where $\tau$ is an intensity threshold. Cells are randomly sampled from $\(S\)$ to obtain spatial coordinates $\(\{ (x_i, y_i) \}_{i=1}^{N}\)$.
 
 #### 2. Cell-Type Assignment
 
-Each cell at \((x_i, y_i)\) is assigned a discrete cell type \( c_i \in \{1,2,\dots,T\} \) based on predefined proportions \( P(c) \) sampled from a Dirichlet distribution:
+Each cell at $\((x_i, y_i)\)$ is assigned a discrete cell type $\( c_i \in \{1,2,\dots,T\} \)$ based on predefined proportions $\( P(c) \)$ sampled from a Dirichlet distribution:
 
 $$
-P(c) \sim \text{Dir}(\alpha_1, \alpha_2, \dots, \alpha_T).
+P(c) $\sim \text{Dir}(\alpha_1, \alpha_2, \dots, \alpha_T).$
 $$
 
 #### 3. Gene Expression Generation
 
-For each cell type \( c \), gene expression is modeled as a multivariate normal distribution:
+For each cell type $\( c \)$, gene expression is modeled as a multivariate normal distribution:
 
-$$
+$
 g_i \sim \mathcal{N}(\mu_c, \Sigma_c),
-$$
+$
 
 where:
+$
 - \( \mu_c \in \mathbb{R}^n \) is the mean expression vector,
 - \( \Sigma_c \) is the covariance matrix capturing gene-gene correlations and intra-type variability.
-
+$
 ### Parameterization of Synthetic Data
 
 The model is controlled by several key parameters:
 
 | Parameter                 | Description                                               |
 |---------------------------|-----------------------------------------------------------|
-| \( n \)                   | Number of genes measured per cell                         |
-| \( T \)                   | Number of distinct cell types                             |
-| \( N \)                   | Total number of cells                                     |
-| \( \alpha \)              | Dirichlet parameters for cell-type proportions            |
-| \( \sigma_{\text{within}} \) | Variation within cell types (diagonal of \( \Sigma_c \))   |
-| \( \sigma_{\text{between}} \) | Separation between cell types (magnitude of \( \mu_c \))  |
+| $\( n \)$                 | Number of genes measured per cell                         |
+| $\( T \)$                 | Number of distinct cell types                             |
+| $\( N \)$                 | Total number of cells                                     |
+| $\( \alpha \)$            | Dirichlet parameters for cell-type proportions            |
+| $\( \sigma_{\text{within}} \)$ | Variation within cell types (diagonal of $\( \Sigma_c \))$   |
+| $\( \sigma_{\text{between}} \)$ | Separation between cell types (magnitude of $\( \mu_c \))$  |
 
 ### Visualization and Validation
 
@@ -115,8 +116,6 @@ To evaluate the generated data, SPATIOME uses:
   
 - **Spatial Plotting:**  
   To verify that the spatial distribution of cells conforms to the predefined mask.
-
-Example figures:
 
 - **UMAP Projection:**
 
