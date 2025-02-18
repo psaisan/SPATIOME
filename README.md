@@ -1,7 +1,9 @@
 # SPATIOME: A Synthetic Data Platform for Advancing Computational Analysis in Spatial Transcriptomics
 
 The emergence of spatial transcriptomics as a data modality has opened an unprecedented window into the intricate ballet of cellular communication and collective behavior across diverse biological and tissue contexts. While this technology captures the complexity of simultaneous cell-to-cell interactions and coordinated microscale transcriptional programs leading to emergent macroscale tissue phenomena, its direct visual manifestations can be overwhelmingly opaque without an appropriate analytical translator.
+
 <img src="Images/spatiome.PNG"  style="border: 0;"/>
+
 In this repository, we introduce **SPATIOME**—a platform designed to generate synthetic spatial transcriptomic data. SPATIOME serves as a computational framework that transforms opaque spatial transcriptomics data into quantifiable, biologically interpretable measures and visualizations. By leveraging tools from probabilistic inference, machine learning, topology, network theory, and emergent phenomena, this platform provides a testbed for the development and evaluation of analysis algorithms against precisely defined ground truths.
 
 ---
@@ -79,10 +81,10 @@ For each cell type $\( c \)$, gene expression is modeled as a multivariate norma
 ${g_i \sim \mathcal{N}(\mu_c, \Sigma_c)}$,
 
 where:
-${
-- \( \mu_c \in \mathbb{R}^n \) is the mean expression vector,
-- \( \Sigma_c \) is the covariance matrix capturing gene-gene correlations and intra-type variability.
-}$
+
+- $\( \mu_c \in \mathbb{R}^n \)$ is the mean expression vector,
+- $\( \Sigma_c \)$ is the covariance matrix capturing gene-gene correlations and intra-type variability.
+ 
 ### Parameterization of Synthetic Data
 
 The model is controlled by several key parameters:
