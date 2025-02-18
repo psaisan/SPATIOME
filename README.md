@@ -25,7 +25,7 @@ In this repository, we introduce **SPATIOME**—a platform designed to generate 
 
 Spatial transcriptomics enables the capture of spatially resolved gene expression data within tissue sections. Despite its power to record complex biological interactions, the raw data are often difficult to interpret without sophisticated analytical methods. Interdisciplinary efforts have shown that techniques like UMAP (Uniform Manifold Approximation and Projection) can bridge the gap between raw spatial data and interpretable biological insights.
 
-Inspired by these interdisciplinary successes, SPATIOME was developed as a platform for synthetic data generation that aids in the computational formalization of spatial transcriptomics. It allows researchers to simulate controlled environments where algorithms can be rigorously tested and benchmarked.
+Inspired by these interdisciplinary successes, SPATIOME is being developed as a platform for synthetic data generation that aids in the computational formalization of spatial transcriptomics problems and development of solutions. It allows researchers to simulate controlled environments where algorithms can be rigorously tested and benchmarked.
 
 ---
 
